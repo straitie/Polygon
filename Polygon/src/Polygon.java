@@ -9,9 +9,9 @@ public class Polygon {
     //Constructors
 
     public Polygon() {
-        sides = 4;
+        sides = 3;
         sideLength = 1;
-        polygon = "Square";
+        polygon = "triangle";
     }
 
     public Polygon(int numSides, double lengthOfSides, String nameOfPolygon) {
