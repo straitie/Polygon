@@ -15,8 +15,18 @@ public class Polygon {
     }
 
     public Polygon(int numSides, double lengthOfSides, String nameOfPolygon) {
-        sides = numSides;
-        sideLength = lengthOfSides;
+        if (numSides > 2) {
+            sides = numSides;
+        }
+        else {
+            sides = 3;
+        }
+        if (lengthOfSides > 0) {
+            sideLength = lengthOfSides;
+        }
+        else {
+            sideLength = 1.0;
+        }
         polygon = nameOfPolygon;
     }
 
