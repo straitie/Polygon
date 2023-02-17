@@ -25,7 +25,6 @@ public class PolygonTester {
         System.out.println(poly2.getNumSides() == 3);
         System.out.println(poly2.getSideLength() == 1.0);
         System.out.println(poly2.getShapeType().equals("Triangle"));
-        System.out.println(poly2.calculateArea());
         System.out.println(poly2.calculateArea() == 0.433);
         System.out.println(poly2.calculatePerimeter() == 3.0);
 

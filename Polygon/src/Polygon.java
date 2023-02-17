@@ -17,16 +17,17 @@ public class Polygon {
     }
 
     public Polygon(int numSides, double lengthOfSides, String nameOfPolygon) {
-        if (numSides > 2 || lengthOfSides <= 0) {
-            System.out.println("Invalid number of sides (>3) or length of sides(>=0), defaulted.");
+        if (numSides < 2 || lengthOfSides <= 0) {
+            System.out.println("Invalid number of sides (<3) or length of sides(<=0), defaulted.");
             sides = 3;
             sideLength = 1;
+            polygon = "Triangle";
         }
         else {
             sides = numSides;
             sideLength = lengthOfSides;
+            polygon = nameOfPolygon;
         }
-        polygon = nameOfPolygon;
     }
 
     //Methods
@@ -44,7 +45,7 @@ public class Polygon {
      *
      */
     public double calculateArea() {
-        double a = sideLength / (2.0 * Math.tanh(180.0/sides));
+        double a = sideLength / (2.0 * Math.tan(Math.toRadians(180.0)/sides));
         area = (calculatePerimeter() * a) / 2.0;
         double rounded = Math.round(area * 1000.0) / 1000.0;
         return rounded;
