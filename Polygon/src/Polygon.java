@@ -49,9 +49,9 @@ public class Polygon {
      *
      */
     public double calculateArea() {
-        double a = sideLength / (2 * Math.tanh(180/sides));
-        area = (calculatePerimeter() * a) / 2;
-        double rounded = Math.round(area * 1000) / 1000.0;
+        double a = sideLength / (2.0 * Math.tanh(180.0/sides));
+        area = (calculatePerimeter() * a) / 2.0;
+        double rounded = Math.round(area * 1000.0) / 1000.0;
         return rounded;
     }
 
