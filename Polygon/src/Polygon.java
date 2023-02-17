@@ -5,13 +5,15 @@ public class Polygon {
     private int sides;
     private double sideLength;
     private String polygon;
+    private double perimeter;
+    private double area;
 
     //Constructors
 
     public Polygon() {
         sides = 3;
         sideLength = 1;
-        polygon = "triangle";
+        polygon = "Triangle";
     }
 
     public Polygon(int numSides, double lengthOfSides, String nameOfPolygon) {
@@ -19,15 +21,38 @@ public class Polygon {
             sides = numSides;
         }
         else {
+            System.out.println("Invalid number of sides (less than 3), defaulted to 3.");
             sides = 3;
         }
         if (lengthOfSides > 0) {
             sideLength = lengthOfSides;
         }
         else {
+            System.out.println("Invalid length of sides (less than or equal to 0), defaulted to 1.0.");
             sideLength = 1.0;
         }
         polygon = nameOfPolygon;
+    }
+
+    //Methods
+
+    /**
+     *
+     */
+    public double calculatePerimeter() {
+        perimeter = sides * sideLength;
+        double rounded = Math.round(perimeter * 1000) / 1000.0;
+        return rounded;
+    }
+
+    /**
+     *
+     */
+    public double calculateArea() {
+        double a = sideLength / (2 * Math.tanh(180/sides));
+        area = (calculatePerimeter() * a) / 2;
+        double rounded = Math.round(area * 1000) / 1000.0;
+        return rounded;
     }
 
     //Accessors
@@ -60,5 +85,40 @@ public class Polygon {
      */
     public String getShapeType() {
         return polygon;
+    }
+
+    //Mutators
+
+    /**
+     *
+     */
+    public void setNumSides(int numSides) {
+        if (numSides > 2) {
+            sides = numSides;
+        }
+        else {
+            System.out.println("Invalid number of sides (less than 3), no change.");
+            return;
+        }
+    }
+
+    /**
+     *
+     */
+    public void setSideLength(double lengthOfSides) {
+        if (lengthOfSides > 0) {
+            sideLength = lengthOfSides;
+        }
+        else {
+            System.out.println("Invalid length of sides (less than or equal to 0), no change.");
+            return;
+        }
+    }
+
+    /**
+     *
+     */
+    public void setShapeName(String nameOfPolygon) {
+        polygon = nameOfPolygon;
     }
 }
