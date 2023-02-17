@@ -17,19 +17,14 @@ public class Polygon {
     }
 
     public Polygon(int numSides, double lengthOfSides, String nameOfPolygon) {
-        if (numSides > 2) {
-            sides = numSides;
-        }
-        else {
-            System.out.println("Invalid number of sides (less than 3), defaulted to 3.");
+        if (numSides > 2 || lengthOfSides <= 0) {
+            System.out.println("Invalid number of sides (>3) or length of sides(>=0), defaulted.");
             sides = 3;
-        }
-        if (lengthOfSides > 0) {
-            sideLength = lengthOfSides;
+            sideLength = 1;
         }
         else {
-            System.out.println("Invalid length of sides (less than or equal to 0), defaulted to 1.0.");
-            sideLength = 1.0;
+            sides = numSides;
+            sideLength = lengthOfSides;
         }
         polygon = nameOfPolygon;
     }
