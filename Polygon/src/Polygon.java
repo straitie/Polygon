@@ -117,4 +117,14 @@ public class Polygon {
     public void setShapeName(String nameOfPolygon) {
         polygon = nameOfPolygon;
     }
+
+    //toString
+
+    /**
+     *
+     */
+    public String toString() {
+        return "Your shape is a " +polygon+" and it has "+sides+" sides.\nIt has a side length of "+sideLength+
+                ".\nIt has a perimeter of "+calculatePerimeter()+" units.";
+    }
 }
