@@ -33,7 +33,7 @@ public class Polygon {
     //Methods
 
     /**
-     *
+     * I don't care enough to finish the java docs, have a good day though.
      */
     public double calculatePerimeter() {
         perimeter = sides * sideLength;
